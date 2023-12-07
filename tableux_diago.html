@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang ="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="table_style.css">
+    <title>DTG: Diagonal Table Generator</title>
+  </head>
+  <body>
+    <div class="for_dtg">
+      <h1>Diagonal Table Generator (DTG)</h1>
+      <section>
+        <label for="t_width">Largeur:</label>
+        <input type="number" id="t_width" min="0">
+        <label for="t_height">Hauteur:</label>
+        <input type="number" id="t_height" min="0">
+        <button onclick="generateTable()">Générer</button>
+      </section>
+    </div>
+    <script>
+      function generateTable() {
+        // Déclaration des lignes et colonnes + le tableau vide
+        var t_width = parseInt(document.getElementById('t_width').value);
+        var t_height = parseInt(document.getElementById('t_height').value);
+        var table = document.getElementById('my_table');
+        table.innerHTML = '';
+        // Boucle for pour générer le tableau
+        for (var row = 0; row < t_height; row++) {
+
+          var new_row = table.insertRow(row);
+          //%
+          for (var col = 0; col < t_width; col++) {
+
+            var new_value = (row + col) % (t_width * t_height);
+            var new_cell = new_row.insertCell(col);
+            new_cell.textContent = new_value;
+
+          }
+        }
+      }
+    </script>
+    
+    <table id="my_table"></table>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

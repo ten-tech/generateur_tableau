@@ -1,0 +1,16 @@
+.for_dtg  {
+    text-align: center;
+    background-color: rgb(200, 181, 217);
+}
+
+#my_table {
+  border-collapse: collapse;
+  align-items: center;
+}
+
+td {
+  border: 1px solid black;
+  padding: 5px;
+  align-items: center;
+}
+
